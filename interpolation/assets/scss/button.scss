@@ -1,0 +1,53 @@
+$radio-canada-font-path: "../fonts";
+
+@font-face {
+  src: url("#{$radio-canada-font-path}/RadioCanada-VariableFont_wdth\,wght.ttf");
+  font-family: "Radio Canada";
+}
+
+.btn {
+  width: 200px;
+  padding: 10px 0;
+  background: none;
+  border: 0;
+  border-radius: 10px;
+  display: block;
+  margin: 10px 0;
+  font-family: "Radio Canada";
+
+  &.btn-orange {
+    background: $color-orange;
+    color: #fff;
+  
+    &:hover {
+      background: darken($color-orange, 5%);
+    }
+  }
+
+  &.btn-purple {
+    background: $color-purple;
+    color: #fff;
+  
+    &:hover {
+      background: desaturate($color-purple, 5%);
+    }
+  }
+
+  &.btn-yellow {
+    background: $color-yellow;
+    color: #fff;
+
+    &:hover {
+      background: mix($color-yellow, pink);
+    }
+  }
+
+  &.btn-green {
+    background: $color-green;
+    color: #fff;
+
+    &:hover {
+      background: grayscale($color-green);
+    }
+  }
+}

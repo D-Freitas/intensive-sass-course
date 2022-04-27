@@ -1,0 +1,17 @@
+p {
+  span {
+    background: red;
+  }
+
+  b {
+    background: black;
+  }
+
+  &:hover {
+    color: #fff;
+  }
+}
+
+body {
+  background: blue;
+}

@@ -1,0 +1,70 @@
+@mixin button-style($background, $color) {
+  background: $background;
+  color: $color;
+}
+
+@mixin button-style-darken-hover($background) {
+  &:hover {
+    background: darken($background, 5%);
+  }
+}
+
+@mixin button-style-desaturate-hover($background) {
+  &:hover {
+    background: desaturate($background, 5%);
+  }
+}
+
+@mixin button-style-mix-hover($background) {
+  &:hover {
+    background: mix($background, red);
+  }
+}
+
+@mixin button-style-grayscale-hover($background) {
+  &:hover {
+    background: grayscale($background);
+  }
+}
+
+.btn {
+  width: 200px;
+  padding: 10px 0;
+  background: none;
+  border: 0;
+  border-radius: 10px;
+  display: block;
+  margin: 10px 0;
+
+  &.btn-orange {
+    @include button-style($color-orange, #fff);
+
+    &:hover {
+      @include button-style-darken-hover($color-orange);
+    }
+  }
+
+  &.btn-purple {
+    @include button-style($color-purple, #fff);
+
+    &:hover {
+      @include button-style-desaturate-hover($color-purple);
+    }
+  }
+
+  &.btn-yellow {
+    @include button-style($color-yellow, #000);
+
+    &:hover {
+      @include button-style-mix-hover($color-yellow);
+    }
+  }
+
+  &.btn-green {
+    @include button-style($color-green, #fff);
+
+    &:hover {
+      @include button-style-grayscale-hover($color-green);
+    }
+  }
+}

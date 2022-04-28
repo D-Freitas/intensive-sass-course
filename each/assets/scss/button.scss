@@ -1,0 +1,26 @@
+@mixin button-style($background, $color) {
+  background: $background;
+  color: $color;
+}
+
+.btn {
+  width: 200px;
+  padding: 10px 0;
+  background: none;
+  border: 0;
+  border-radius: 10px;
+  display: block;
+  margin: 10px 0;
+
+  $button-colors: (
+    "orange": $color-orange,
+    "purple": $color-purple,
+    "yellow": $color-yellow
+  );
+
+  @each $name, $color in $button-colors {
+    &.btn-#{$name} {
+      @include button-style($color, #fff);
+    }
+  }
+}
